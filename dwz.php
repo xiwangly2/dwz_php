@@ -28,6 +28,10 @@ $sran = uniqid($prefix);
 //核心部分，通过index默认文件+Location实现跳转（避免配置伪静态，但是更耗存储空间）
 $index_file = $x1.$sran."/index.php";
 $text = '<?php'."\n"."header(\"Location: $url\");"."\n".'?>';
+if($url == "")
+{
+	die("Error!Please visit https://github.com/xiwangly2/dwz_php/blob/master/README.md");
+}
 mkdir($x1);
 mkdir($x1.$sran);
 file_put_contents($index_file,$text);
