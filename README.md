@@ -18,3 +18,11 @@ dwz.php
 你甚至还可以更改字符串的生成规则
 
 最好提交前对要生成短网址的url进行转码，否则可能遗失get参数
+
+对于QRSpeed词库，您可以尝试这样写：
+dwz (.*)|短网址 ?(.*)
+e:$URLEncoder %括号1%$
+h:$访问 http://dwz.xiwangly.top/?url=%e%$
+短网址生成成功：\r%h%
+
+——本文完——
