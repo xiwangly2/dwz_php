@@ -9,7 +9,7 @@ dwz.php<br>index.php
 
 这个有一个很显著的优点就是不用配置伪静态，直接作为API使用……
 
-这是搞在数据库的，需要在dwz.php和index.php正确填写数据库信息，目前仅支持MySQL数据库，测试使用的版本是5.7
+这是搞在数据库的，需要在dwz.php和index.php正确填写数据库信息，目前仅支持MySQL数据库，测试使用的MySQL版本是5.7，PHP版本需要大于7.0
 
 懒……
 
