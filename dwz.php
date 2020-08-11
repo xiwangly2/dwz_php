@@ -51,7 +51,7 @@ $conn = new mysqli($host,$username,$password,$dbname);
 $sql = "DEFAULT CHARSET=utf8mb4";
 $conn->query($sql);
 //使用sql创建数据表
-$sql = "CREATE TABLE $tablename (id INT(64) UNSIGNED AUTO_INCREMENT PRIMARY KEY,url VARCHAR(128) NOT NULL,code VARCHAR(32) NOT NULL,reg_date TIMESTAMP)";
+$sql = "CREATE TABLE $tablename (id INT(128) UNSIGNED AUTO_INCREMENT PRIMARY KEY,url VARCHAR(1280) NOT NULL,code VARCHAR(128) NOT NULL,reg_date TIMESTAMP)";
 $conn->query($sql);
 $sql = "SELECT id, url, code FROM $tablename";
 $conn->query($sql);
