@@ -41,7 +41,7 @@ location / {
 }
 ```
 <br>Apache:
-htaccess```
+```
 RewriteEngine On
 RewriteRule ^(\d+|\w+)$ index.php?$1
 ```
