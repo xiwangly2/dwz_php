@@ -1,7 +1,7 @@
 # dwz_php
 短网址生成
 
-<font color=#ff0000>8.7更新（见分支）：增加了数据库版的短网址，解决一个url生成多个短网址的问题，规则略有不同，见对应的markdown文档</font>
+<p style="color:red">8.7更新（见分支）：增加了数据库版的短网址，解决一个url生成多个短网址的问题，规则略有不同，见对应的markdown文档</p>
 
 dwz.php
 
