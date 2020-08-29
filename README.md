@@ -40,7 +40,7 @@ location / {
 	rewrite (\d+|\w+)$ /index.php?$1;
 }
 ```
-<br>Apache:
+<br>Apache:(通常放置于.htaccess文件中)
 ```
 RewriteEngine On
 RewriteRule ^(\d+|\w+)$ index.php?$1
