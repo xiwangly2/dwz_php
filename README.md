@@ -34,9 +34,15 @@ h:$访问 http\(s\)://域名\(:端口\)/?url=%e%$<br>
 7.23更新(见分支)：增加了纯数字短网址，现有3种生成算法，我并不希望使用可能重复的算法，因此md5那类的算法就不用提了<br>
 8.7更新（当前位置）：增加了数据库版的短网址，规则略有不同，见对应的markdown文档及文件内说明<br>
 8.29更新（当前位置）：若您需要伪静态，可以参考以下我们的配置推荐：
+<br>Nginx:
 ```nginx
 location / {
 	rewrite (\d+|\w+)$ /index.php?$1;
 }
+```
+<br>Apache:
+```
+RewriteEngine On
+RewriteRule ^(\d+|\w+)$ index.php?$1
 ```
 ——本文完——
