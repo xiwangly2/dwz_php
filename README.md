@@ -41,7 +41,7 @@ location / {
 }
 ```
 <br>Apache:(通常放置于`.htaccess`文件中)
-```
+```apache
 RewriteEngine On
 RewriteRule ^(\d+|\w+)$ index.php?$1
 ```
