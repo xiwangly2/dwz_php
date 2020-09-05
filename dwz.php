@@ -60,8 +60,8 @@ $number = $number_s+"0"+$rowss[0];
 //移量（可以带浮点数）
 $number1 = $number+"1";
 $sran = $number1;
-$code = $sran;
 
+$code = $sran;
 $sql = "SELECT * from $tablename WHERE url=\"{$url}\"";
 $result = $conn->query($sql);
 $rows = mysqli_fetch_array($result);
