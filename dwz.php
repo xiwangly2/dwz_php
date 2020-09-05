@@ -71,7 +71,7 @@ $result = $conn->query($sql);
 $rows = mysqli_fetch_array($result);
 if($rows["code"] != "")
 {
-	if($port == "80")
+	if($port == "80" || $port == "443")
 	{
 		echo $head.$_SERVER["SERVER_NAME"].$x1."?".$rows["code"];
 	}
@@ -97,7 +97,7 @@ if($url != "")
 	$sql = "SELECT * from $tablename WHERE url=\"{$url}\"";
 	$result = $conn->query($sql);
 	$rows = mysqli_fetch_array($result);
-	if($port == "80")
+	if($port == "80" || $port == "443")
 	{
 		echo $head.$_SERVER["SERVER_NAME"].$x1."?".$rows["code"];
 	}
