@@ -12,13 +12,7 @@ dwz.php
 配置信息要改
 */
 header("content-type:text/html;charset=utf-8");
-//配置信息
-//$host = "host(:port)";
-$host = "";
-$username = "";
-$password = "";
-$dbname = "";
-$tablename = "";
+include_once "./config.php";
 //get参数
 $url = $_GET["url"];
 //$x1定义显示的文件夹，一般最短为根目录

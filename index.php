@@ -18,13 +18,7 @@ if(!isset($code) || $code == "")
 	@header("Location: ./get.html");
 	die;
 }
-//配置信息
-//$host = "host(:port)";
-$host = "";
-$username = "";
-$password = "";
-$dbname = "";
-$tablename = "";
+include_once "./config.php";
 $conn = new mysqli($host,$username,$password,$dbname);
 //设置编码
 $sql = "DEFAULT CHARSET=utf8mb4";
