@@ -29,7 +29,7 @@ $number_s = "1000";
 $url = $_GET["url"];
 if(!isset($url) || $url == "")
 {
-	die("Error!Please visit https://github.com/xiwangly2/dwz_php/blob/master/README.md");
+	die("Error!Please visit https://github.com/xiwangly2/dwz_php/blob/mysql_8.7/README.md");
 }
 //获取端口
 $port = $_SERVER["SERVER_PORT"];
