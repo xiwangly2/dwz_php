@@ -13,6 +13,11 @@ index.php
 */
 header("content-type:text/html;charset=utf-8");
 $code = $_SERVER["QUERY_STRING"];
+if(!isset($code) || $code == "")
+{
+	@header("Location: ./get.html");
+	die;
+}
 //配置信息
 //$host = "host(:port)";
 $host = "";
