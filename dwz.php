@@ -23,13 +23,15 @@ $tablename = "";
 $url = $_GET["url"];
 //$x1定义显示的文件夹，一般最短为根目录
 $x1 = "/";
+//如果有伪静态请在$x2填""，否则填"?"
+$x2 = "?";
 //计数的起始数字（保留短网址范围）
 $number_s = "1000";
 //get传入url
 $url = $_GET["url"];
 if(!isset($url) || $url == "")
 {
-	die("Error!Please visit https://github.com/xiwangly2/dwz_php/blob/mysql_8.7/README.md");
+	die("Error!Please visit https://github.com/xiwangly2/dwz_php/blob/master/README.md");
 }
 //获取端口
 $port = $_SERVER["SERVER_PORT"];
@@ -51,7 +53,7 @@ $conn = new mysqli($host,$username,$password,$dbname);
 $sql = "DEFAULT CHARSET=utf8mb4";
 $conn->query($sql);
 //使用sql创建数据表
-$sql = "CREATE TABLE $tablename (id INT(128) UNSIGNED AUTO_INCREMENT PRIMARY KEY,url VARCHAR(1280) NOT NULL,code VARCHAR(128) NOT NULL,reg_date TIMESTAMP)";
+$sql = "CREATE TABLE $tablename (id INT(64) UNSIGNED AUTO_INCREMENT PRIMARY KEY,url VARCHAR(128) NOT NULL,code VARCHAR(32) NOT NULL,reg_date TIMESTAMP)";
 $conn->query($sql);
 $sql = "SELECT id, url, code FROM $tablename";
 $conn->query($sql);
@@ -73,11 +75,11 @@ if($rows["code"] != "")
 {
 	if($port == "80" || $port == "443")
 	{
-		echo $head.$_SERVER["SERVER_NAME"].$x1."?".$rows["code"];
+		echo $head.$_SERVER["SERVER_NAME"].$x1.$x2.$rows["code"];
 	}
 	else
 	{
-		echo $head.$_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$x1."?".$rows["code"];
+		echo $head.$_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$x1.$x2.$rows["code"];
 	}
 	die();
 }
@@ -99,11 +101,11 @@ if($url != "")
 	$rows = mysqli_fetch_array($result);
 	if($port == "80" || $port == "443")
 	{
-		echo $head.$_SERVER["SERVER_NAME"].$x1."?".$rows["code"];
+		echo $head.$_SERVER["SERVER_NAME"].$x1.$x2.$rows["code"];
 	}
 	else
 	{
-		echo $head.$_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$x1."?".$rows["code"];
+		echo $head.$_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$x1.$x2.$rows["code"];
 	}
 }
 $conn->close();
